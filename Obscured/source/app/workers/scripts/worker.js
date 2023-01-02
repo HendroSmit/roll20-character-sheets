@@ -1,0 +1,3 @@
+on('change:', function() {
+  setAttrs({});
+});
