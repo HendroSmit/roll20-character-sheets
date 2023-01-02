@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<div class="flex items-center justify-center h-screen bg-gray-200">
+  <div class="container">
+    <div class="bg-white rounded-lg shadow-lg p-5 mx-2 md:p-20">
+      <div class="text-center">
+        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl"><span class="text-pink-600">Roll20 </span>Obscured</h2>
+        <h3 class="text-xl mt-10 md:text-3xl">Hunter and Horror sheets</h3>
+        <p class="text-md mt-10 md:text-xl"> Coming Soon</p>
+      </div>
+    </div>
+  </div>
+</div>
+<rolltemplate class="sheet-rolltemplate-sheetname">
+  {{#rollName}}
+  {{/rollName}}
+</rolltemplate>
+<script type="text/worker">on('change:', function() {
+  setAttrs({});
+});
+</script>
