@@ -4,9 +4,11 @@ const gulp = require('gulp')
 const PATHS = {
   dist: '../',
   pug: './app/Obscured.pug',
-  translation: '../translation.json'
+  translation: '../translation.json',
+  preview: './dev',
+  dev: './app/dev.pug'
 };
- 
+
 gulp.task('html', () => {
   return gulp
   .src(PATHS.pug)
@@ -16,9 +18,21 @@ gulp.task('html', () => {
     }))
     .pipe(gulp.dest(PATHS.dist))
 })
+ 
+gulp.task('preview', () => {
+  return gulp
+  .src(PATHS.dev)
+    .pipe(pug({
+      pretty: true,
+      locals: require(PATHS.translation)
+    }))
+    .pipe(gulp.dest(PATHS.preview))
+})
 
 gulp.task('watch', gulp.series(['html'], () => {
   gulp.watch(['./app/**/*.pug','./app/**/*.js'], gulp.series(['html']))
 }))
 
 gulp.task('build',  gulp.series(['html']))
+
+gulp.task('dev',  gulp.series(['preview']))
