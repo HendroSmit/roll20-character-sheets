@@ -5,8 +5,7 @@
   "main": "Obscured.html",
   "scripts": {
     "gulp:build": "gulp build",
-    "gulp:watch": "gulp watch",
-    "gulp:dev": "gulp dev"
+    "gulp:watch": "gulp watch"
   },
   "author": "HendroSmit",
   "dependencies": {
