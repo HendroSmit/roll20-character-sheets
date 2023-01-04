@@ -3,7 +3,7 @@ const gulp = require('gulp')
 
 const PATHS = {
   dist: '../',
-  pug: './app/Obscured.pug',
+  pug: './app/obscured.pug',
   translation: '../translation.json',
   preview: './dev',
   dev: './app/dev.pug'
@@ -29,10 +29,10 @@ gulp.task('preview', () => {
     .pipe(gulp.dest(PATHS.preview))
 })
 
-gulp.task('watch', gulp.series(['html'], () => {
-  gulp.watch(['./app/**/*.pug','./app/**/*.js'], gulp.series(['html']))
-}))
-
 gulp.task('build',  gulp.series(['html']))
 
 gulp.task('dev',  gulp.series(['preview']))
+
+gulp.task('watch', gulp.series(['preview'], () => {
+  gulp.watch(['./app/**/*.pug','./app/**/*.js'], gulp.series(['preview']))
+}))
