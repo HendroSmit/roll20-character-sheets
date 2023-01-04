@@ -1,31 +1,64 @@
 
-<div class="flex items-center justify-center h-screen bg-gray-200">
-  <div class="container">
-    <div class="bg-white rounded-lg shadow-lg p-5 mx-2 md:p-20">
-      <div class="text-center p-10">
-        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl"><span class="text-pink-600">Roll20 </span>Obscured</h2>
-        <h3 class="text-xl mt-10 md:text-3xl">Hunter and Horror sheets</h3>
-        <p class="text-md mt-10 md:text-xl"> Coming Soon to roll20</p>
+<main id="main">
+  <nav class="sheet-nav" id="main-nav"></nav>
+  <article id="settings">
+    <h2 class="dark:bg-gray-900">Settings</h2>
+    <section class="bg-white dark:bg-gray-900">
+      <div class="container px-6 py-10 mx-auto">
+        <div class="grid gap-8 mt-8 xl:mt-12 xl:gap-12">
+          <div class="p-8 space-y-3 border-2 border-gray-400 rounded-xl dark:border-gray-300">
+            <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Settings</h1>
+            <p class="text-gray-500 dark:text-gray-300">Interface for selecting the correct type of sheet</p>
+            <label class="text-gray-500 dark:text-gray-300" for="name">
+                 Name</label>
+            <input class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" id="name" type="text" name="attr_name" value="name"/>
+          </div>
+        </div>
       </div>
-      <div class="grid grid-cols-4 gap-4">
-        <button class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">10</button>
-        <button class="col-span-2 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">20</button>
-        <button class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">30</button>
-        <button class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">40</button>
-        <button class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">50</button>
-        <button class="col-span-2 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-pink-600 rounded-lg hover:bg-pink-500 focus:outline-none focus:ring focus:ring-pink-300 focus:ring-opacity-80">60</button>
+    </section>
+  </article>
+  <article id="hunter">
+    <div class="h2 dark:bg-gray-900">Hunter</div>
+    <section class="bg-white dark:bg-gray-900"></section>
+    <div class="container px-6 py-10 mx-auto">
+      <div class="grid gap-8 mt-8 xl:mt-12 xl:gap-12">
+        <div class="p-8 space-y-3 border-2 border-gray-400 rounded-xl dark:border-gray-300">
+          <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Hunter</h1>
+          <p class="text-gray-500 dark:text-gray-300">The Hunter sheet</p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="div">Horror</div>
-<div class="div">Hunter</div>
-<div class="div">NPC</div>
-<rolltemplate class="sheet-rolltemplate-sheetname">
-  {{#rollName}}
-  {{/rollName}}
-</rolltemplate>
+  </article>
+  <article id="horror">
+    <h2 class="dark:bg-gray-900">Horror</h2>
+    <section class="bg-white dark:bg-gray-900"></section>
+    <div class="container px-6 py-10 mx-auto">
+      <div class="grid gap-8 mt-8 xl:mt-12 xl:gap-12">
+        <div class="p-8 space-y-3 border-2 border-gray-400 rounded-xl dark:border-gray-300">
+          <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Horror</h1>
+          <p class="text-gray-500 dark:text-gray-300">The Horror sheet</p>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="dark:bg-gray-900" id="npc">
+    <h2 class="dark:bg-gray-900">NPC</h2>
+    <section class="bg-white dark:bg-gray-900"></section>
+    <div class="container px-6 py-10 mx-auto">
+      <div class="grid gap-8 mt-8 xl:mt-12 xl:gap-12">
+        <div class="p-8 space-y-3 border-2 border-gray-400 rounded-xl dark:border-gray-300">
+          <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">NPC</h1>
+          <p class="text-gray-500 dark:text-gray-300">The NPC sheet</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
 <script type="text/worker">on('change:', function() {
   setAttrs({});
 });
 </script>
+<rolltemplate class="sheet-rolltemplate-sheetname">
+  {{#rollName}}
+  {{/rollName}}
+</rolltemplate>
