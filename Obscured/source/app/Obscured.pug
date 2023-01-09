@@ -1,8 +1,11 @@
+//- Mixins
 include mixins/_sheetmixins
 
+//- HTML main page
 main#main
-    nav#main-nav.sheet-nav
-
+    nav#main-nav(class="sheet-nav")
+    //- The modal used to choose which type of sheet to use
+    include articles/Start/_start
     //- The base tabs of the sheet
     include articles/hunter/_hunter
     //- Includes all the code for the hunter character sheet
